@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export default function Items() {
   const [items, setItems] = useState([]);
@@ -9,7 +9,6 @@ export default function Items() {
 
   const fetchItems = async () => {
     setLoading(true);
-    // simple fetch; filtering is done client-side for demo simplicity
     const { data, error } = await supabase
       .from('items')
       .select('*')
@@ -44,7 +43,7 @@ export default function Items() {
           onChange={(e) => setQ(e.target.value)}
           style={{ flex: 1, padding: 8 }}
         />
-        <Link to="/new">
+        <Link to="/dashboard/items/new">
           <button>+ New</button>
         </Link>
       </div>
@@ -70,7 +69,7 @@ export default function Items() {
                 <td>{Number(it.price).toFixed(2)}</td>
                 <td>{it.qty}</td>
                 <td style={{ display:'flex', gap:8 }}>
-                  <Link to={`/edit/${it.id}`}><button>Edit</button></Link>
+                  <Link to={`/dashboard/items/edit/${it.id}`}><button>Edit</button></Link>
                   <button onClick={() => remove(it.id)}>Delete</button>
                 </td>
               </tr>
