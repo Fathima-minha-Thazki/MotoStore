@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
+import { supabase } from '@/lib/supabase';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function ItemForm() {
@@ -45,7 +45,7 @@ export default function ItemForm() {
     setSaving(false);
 
     if (error) return alert(error.message);
-    nav('/');
+    nav('/dashboard/items');
   };
 
   return (
@@ -63,7 +63,7 @@ export default function ItemForm() {
 
         <div style={{ display:'flex', gap:8, marginTop:8 }}>
           <button disabled={saving}>{saving ? 'Saving...' : 'Save'}</button>
-          <button type="button" onClick={() => nav('/')}>Cancel</button>
+          <button type="button" onClick={() => nav('/dashboard/items')}>Cancel</button>
         </div>
       </form>
     </div>
