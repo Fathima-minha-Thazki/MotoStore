@@ -49,7 +49,7 @@ export default function FrontPage() {
             cursor: "pointer",
             transition: "transform 0.2s, box-shadow 0.2s"
           }}
-          onClick={() => navigate('/dashboard/items')}
+          onClick={() => navigate('/dashboard/reports')}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
             e.target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
@@ -70,14 +70,14 @@ export default function FrontPage() {
             cursor: "pointer",
             transition: "transform 0.2s, box-shadow 0.2s"
           }}
-          onClick={() => navigate('/dashboard/items')}
+          onClick={() => navigate('/Reports/index')}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
-            e.target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+            // e.target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
           }}
           onMouseLeave={(e) => {
             e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+            // e.target.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
           }}>
           <h3>☎️ Contact</h3>
           <p>Reach out to us for support anytime.</p>

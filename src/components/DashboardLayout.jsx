@@ -33,7 +33,9 @@ export default function DashboardLayout() {
           <Link to="/dashboard" style={{ color: "#fff" }}>Home</Link>
           <Link to="/dashboard/items" style={{ color: "#fff" }}>Items</Link>
           <Link to="/dashboard/about" style={{ color: "#fff" }}>About</Link>
+          <Link to="/dashboard/reports" style={{ color: "#fff" }}>Reports</Link>
           <Link to="/dashboard/contact" style={{ color: "#fff" }}>Contact</Link>
+
         </nav>
         <div>
           {user && <span style={{ marginRight: 20 }}>{user.email}</span>}
